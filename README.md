@@ -9,6 +9,9 @@
 - extract and move it to `imagecheck directory`
 
 ### Step 2:
+- Create `MissingJSON` Directory in root dir.
+
+### Step 3:
 - Run mainCheck.py
 - Result Output will be create in `MissingJSON`
 

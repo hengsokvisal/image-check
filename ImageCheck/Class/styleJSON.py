@@ -1,6 +1,6 @@
 import json
 import os
-from basic_config import basicPath
+from ImageCheck.basic_config import basicPath
 
 
 missingImagestyleJSON = []

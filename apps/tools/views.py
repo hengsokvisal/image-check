@@ -4,6 +4,7 @@ from .helper import addDict
 import json
 import os
 import glob
+from ImageCheck import  mainCheck
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 loaFile = glob.glob(BASE_DIR+"/ImageCheck/MissingJSON/*.json")
@@ -20,12 +21,20 @@ def index(request):
     }
     print(request.method)
     if request.method == "POST":
-        context =  {
-            'result' : add_dict[request.POST['json_type']],
-            'type'  : request.POST['json_type']
-        }
-        return render(request,"detail.html",context)
-   
+        print()
+        if (request.POST['json_type'] != "result"):
+
+            context =  {
+                'result' : add_dict[request.POST['json_type']],
+                'type'  : request.POST['json_type']
+            }
+            return render(request,"detail.html",context)
+        else:
+            
+            mainCheck.main()
+            print("Done ============")
+            return render(request,"result.html",context)
+
 
     return render(request , "index.html",context)
     

@@ -38,7 +38,7 @@ def findMissingProduct(data):
         except:
             pass
 
-    with open(os.path.join(basicPath.MissingDir, "productJSONMissing.json"), mode='w+', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir,basicPath.Dataname)+ "/productJSONMissing.json", mode='w+', encoding='utf-8') as f:
         json.dump(missingProductJSON, f, sort_keys=True, indent=4)
 
 

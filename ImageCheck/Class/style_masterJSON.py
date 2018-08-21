@@ -25,7 +25,7 @@ def checkMissingProductID(data):
                     productIDFlag = 0
 
     print("TEST",len(styleMasterMissing))
-    with open(os.path.join(basicPath.MissingDir, "styleMasterMissing.json"), mode='w+', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir,basicPath.Dataname)+ "/styleMasterMissing.json", mode='w+', encoding='utf-8') as f:
         json.dump(styleMasterMissing, f, sort_keys=True, indent=4)
 
 

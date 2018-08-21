@@ -20,24 +20,29 @@ def index(request):
         return render(request,"login.html")
     else:
         if request.method == "POST":
-            if (request.POST['json_type'] != "result"):
+            if ('check' in request.POST):
+                mainCheck.main(request.POST['check'])
+                context = load_json()
+                return render(request,"result.html",context)
+
+            if ('json_type' in request.POST):
                 context = load_json()
                 context =  {
                     'result' : context['result'][request.POST['json_type']],
                     'type'  : request.POST['json_type']
                 }
                 return render(request,"detail.html",context)
-            else:
-                mainCheck.main()
-                context = load_json()
-                return render(request,"result.html",context)
+            
+        else:
+            context = {
+                'checks' : next(os.walk(BASE_DIR+"/ImageCheck/Model"))[1]
+            }
     return render(request , "index.html",context)
     
 
 def load_json():
     loaFile = glob.glob(BASE_DIR+"/ImageCheck/MissingJSON/*.json")
     add_dict = addDict()
-    print(loaFile)
     for file_json in loaFile:
         try:
             with open(file_json) as handle:

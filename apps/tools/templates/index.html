@@ -2,12 +2,14 @@
 
 {% block body %}
     <div class="albums-container container-fluid">
-       <p>{{error}}</p>
-        <form action="" method="post" style="display: inline;">
-            {% csrf_token %}
-            <input type="hidden" name="json_type" value="result" />
-            <button type="submit" class="btn btn-primary btn-lg" onclick="loadIndicator();" >Check</button>
-        </form>
+        {% for check in checks %}
+            <form action="" method="post" style="display: inline; padding-left:30px">
+                {% csrf_token %}
+                <input type="hidden" name="check" value="{{check}}" />
+                <button type="submit" class="btn btn-primary btn-lg" onclick="loadIndicator();" >{{check}}</button>
+            </form>
+        {% endfor %}
+        
       
     </div>
     <p id="demo"></p>

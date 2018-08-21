@@ -60,9 +60,12 @@ def rankingJSONCheckMissingImage():
     print("Ranking")
     print("==================")
     #Read JSON File
-    with open(basicPath.JSONDirName+basicPath.JsonfilePath+basicPath.Ranking) as f:
-        data = json.load(f)
+    try:
+        with open(basicPath.JSONDirName+basicPath.JsonfilePath+basicPath.Ranking) as f:
+            data = json.load(f)
 
-    getImageSource(data,"kids")
-    getImageSource(data,"women")
-    getImageSource(data,"men")
+        getImageSource(data,"kids")
+        getImageSource(data,"women")
+        getImageSource(data,"men")
+    except:
+        pass

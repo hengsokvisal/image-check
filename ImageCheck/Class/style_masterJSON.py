@@ -13,7 +13,7 @@ def checkMissingProductID(data):
         for i in img["stylings"]:
             for proId in i["items"]:
                 productIDFlag = 0
-                for allProductid in os.listdir(basicPath.ProductImage):
+                for allProductid in os.listdir(basicPath.JSONDirName+basicPath.ProductImage):
                     if (allProductid == proId["productId"]):
                         productIDFlag = 1
 
@@ -35,7 +35,7 @@ def checkMissingStyleImage(data):
     styleImageFlag = 0
     for img in data["products"]:
         for i in img["stylings"]:
-            for file in os.listdir(basicPath.StyleImage):
+            for file in os.listdir(basicPath.JSONDirName+basicPath.StyleImage):
                 if (i["image"] == file):
                     styleImageFlag = 1
             if(styleImageFlag == 0):

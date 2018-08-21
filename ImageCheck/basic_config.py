@@ -3,7 +3,7 @@ class basicPath:
 
     #Dir Name
     JSONDirName = ""
-
+    print(JSONDirName,"++++JSONDirName")
 
     #Json Path
     JsonfilePath = "/others"
@@ -26,11 +26,11 @@ class basicPath:
 
 
     # style image DIR NAME
-    StyleImage = os.path.join(os.getcwd(),JSONDirName)+"/style_jpg"
+    StyleImage = "/style_jpg"
 
 
     # product image DIR NAME
-    ProductImage = os.path.join(os.getcwd(),JSONDirName)+"/products"
+    ProductImage = "/products"
 
     # Missing Directory
     MissingDir = os.path.join(os.getcwd(),"ImageCheck/MissingJSON")

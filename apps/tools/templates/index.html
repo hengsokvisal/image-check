@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+    <div class="albums-container container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Type of Missing Image Path</h3>
+            </div>
+        {% for key , value in result.items  %}
+            <div class="col-sm-4 col-lg-2">
+                <div class="thumbnail" style="padding-top:30px;margin-top: 20px;">
+                   
+                    <img src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/mCz7hqj/videoblocks-missing-stamp-on-green-screen-white-and-black_hc1xnrjz_thumbnail-full05.png" class="img-responsive">
+                    <div class="caption">
+                        <h4 tyle="margin-bottom: 40px;">{{key}}</h2>
+                        <form action="" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="json_type" value="{{key}}" />
+                            <button type="submit"  class="btn btn-primary btn-sm">View Details</button>
+                        </form>
+   
+                       
+                    </div>
+                </div>
+                
+            </div>
+        {% endfor %}
+        </div>
+
+    </div>
+    <!-- {% for key , value in result.items  %}
+       <h1>{{key}}</h1>
+       {%for i in value %}
+         <p>{{i}}</p>
+        {%endfor%}
+       
+    {% endfor %} -->
+
+{% endblock %}

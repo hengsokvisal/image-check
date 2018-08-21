@@ -65,3 +65,7 @@ def login_user(request):
         else:
             return render(request, 'login.html', {'error_message': 'Invalid login'})
     return render(request, 'login.html')
+
+def logout_user(request):
+    logout(request)
+    return render(request, 'login.html')

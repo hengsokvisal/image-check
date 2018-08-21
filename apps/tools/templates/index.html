@@ -2,13 +2,21 @@
 
 {% block body %}
     <div class="albums-container container-fluid">
-       
+       <p>{{error}}</p>
         <form action="" method="post" style="display: inline;">
             {% csrf_token %}
             <input type="hidden" name="json_type" value="result" />
-            <button type="submit"  class="btn btn-primary btn-lg" >Check</button>
+            <button type="submit"  class="btn btn-primary btn-lg" onclick="myFunction()" >Check</button>
         </form>
       
     </div>
+    <p id="demo"></p>
+
+    <script>
+        function loadIndicator() {
+            console.log("Testing");
+              document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>
 
 {% endblock %}

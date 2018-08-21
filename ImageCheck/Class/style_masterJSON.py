@@ -4,8 +4,8 @@ from ImageCheck.basic_config import basicPath
 # pprint to organize print
 from pprint import pprint
 
-styleMasterMissing = []
 
+styleMasterMissing = []
 # Find Missing Product ID Directory
 def checkMissingProductID(data):
 
@@ -24,7 +24,8 @@ def checkMissingProductID(data):
                 else:
                     productIDFlag = 0
 
-    with open(os.path.join(basicPath.MissingDir, "styleMasterMissing.json"), mode='w', encoding='utf-8') as f:
+    print("TEST",len(styleMasterMissing))
+    with open(os.path.join(basicPath.MissingDir, "styleMasterMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(styleMasterMissing, f, sort_keys=True, indent=4)
 
 
@@ -47,6 +48,7 @@ def checkMissingStyleImage(data):
 
 
 def styleMasterJSONCheckMissingImage():
+    styleMasterMissing.clear()
     print("==================")
     print("StyleMaster")
     print("==================")

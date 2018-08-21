@@ -5,7 +5,6 @@ from ImageCheck.basic_config import basicPath
 from pprint import pprint
 
 missingImageRankingJSON = []
-
 # Check Missing Product Image
 def checkProductImage(productID,imageDir,imageName):
     ProductFlag = 0
@@ -36,7 +35,7 @@ def checkProductIDExist(productID,imageDir,imageName):
     else:
         checkProductImage(productID,imageDir,imageName)
         productIDFlag = 0
-    with open(os.path.join(basicPath.MissingDir, "rankingMissing.json"), mode='w', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir, "rankingMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(missingImageRankingJSON, f, sort_keys=True, indent=4)
 
 
@@ -56,6 +55,7 @@ def getImageSource(json,gender):
 
 
 def rankingJSONCheckMissingImage():
+    missingImageRankingJSON.clear()
     print("==================")
     print("Ranking")
     print("==================")

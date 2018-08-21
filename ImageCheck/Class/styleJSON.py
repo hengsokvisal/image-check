@@ -3,9 +3,9 @@ import os
 from ImageCheck.basic_config import basicPath
 
 
-missingImagestyleJSON = []
 
 def styleJSONCheckMissingImage():
+    missingImagestyleJSON = []
     print("==================")
     print("Style")
     print("==================")
@@ -29,5 +29,5 @@ def styleJSONCheckMissingImage():
         else:
             flag=0
 
-    with open(os.path.join(basicPath.MissingDir, "styleMissing.json"), mode='w', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir, "styleMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(missingImagestyleJSON, f, sort_keys=True, indent=4)

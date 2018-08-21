@@ -4,12 +4,7 @@ from ImageCheck.basic_config import basicPath
 # pprint to organize print
 from pprint import pprint
 
-
 missingProductJSON = []
-
-
-
-
 # Find Missing Product Img & Img color in Product.json
 def findMissingProduct(data):
 
@@ -40,7 +35,7 @@ def findMissingProduct(data):
         else:
             productFlag = 0
 
-    with open(os.path.join(basicPath.MissingDir, "productJSONMissing.json"), mode='w', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir, "productJSONMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(missingProductJSON, f, sort_keys=True, indent=4)
 
 
@@ -87,6 +82,7 @@ def productJSONCheckMissingImage():
     print("==================")
     print("Product")
     print("==================")
+    missingProductJSON.clear()
     #Read JSON File
 
     for allProductImage in os.listdir(basicPath.ProductImage):

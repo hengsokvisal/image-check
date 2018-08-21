@@ -2,17 +2,13 @@
 # PURPOSE
 - Finding Missing Image.
 
-# Setup
+# GETTING STARTED
 
 ### Step 1: 
-- Download [This Sample Data](https://quadinc.box.com/s/7eggpin5piuwewu6xqs9qi3n36eryzfb).
-- extract and move it to `imagecheck directory`
+- Remote into EC2 `ssh ec2-52-194-236-78.ap-northeast-1.compute.amazonaws.com`
+- cd `home/machintos-hd/image-check`
 
 ### Step 2:
-- Create `MissingJSON` Directory in root dir.
-
-### Step 3:
-- Run mainCheck.py
-- Result Output will be create in `MissingJSON`
+- python manage.py runserver 0:80
 
 # Deploy Django with Nginx

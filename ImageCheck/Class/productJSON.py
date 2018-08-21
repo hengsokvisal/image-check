@@ -5,12 +5,12 @@ from ImageCheck.basic_config import basicPath
 from pprint import pprint
 
 missingProductJSON = []
+
+
 # Find Missing Product Img & Img color in Product.json
 def findMissingProduct(data):
 
-    pprint(data)
     for img in data["products"]["colors"]:
-        #print(img["colorImg"])
         productFlag = 0
         #check Product img
         products, productId, productDir, imageName = img["img"].split("/")

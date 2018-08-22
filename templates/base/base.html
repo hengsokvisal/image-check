@@ -5,6 +5,7 @@
     <title>{% block title %}Quad{% endblock %}</title>
     {% load staticfiles %}
     <link rel="shortcut icon" type="image/png" href="https://quad.co.jp/assets/img/fav/favicon-32x32.png"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{% static 'tools/style.css' %}"/>
@@ -55,6 +56,12 @@
 {% block body %}
 
 {% endblock %}
+<script>
+    function loadIndicator() {
+        console.log("Testing")
+        modalLoading.init(true);
+    }
+</script>
 
 </body>
 </html>

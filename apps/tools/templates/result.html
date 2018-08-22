@@ -20,7 +20,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="json_type" value="{{key}}" />
                             <input type="hidden" name="recheck" value="{{recheck}}" />
-                            <button type="submit"  class="btn btn-primary btn-sm">View Details</button>
+                            <button type="submit"  class="btn btn-primary btn-sm" >View Details</button>
                         </form>
                         
                     </div>
@@ -33,12 +33,5 @@
         </div>
 
     </div>
-    <!-- {% for key , value in result.items  %}
-       <h1>{{key}}</h1>
-       {%for i in value %}
-         <p>{{i}}</p>
-        {%endfor%}
-       
-    {% endfor %} -->
 
 {% endblock %}

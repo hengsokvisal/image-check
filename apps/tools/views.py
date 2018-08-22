@@ -51,10 +51,10 @@ def load_json(dirName):
             with open(file_json) as handle:
                 json_name = file_json.replace(BASE_DIR+"/ImageCheck/MissingJSON/"+dirName+"/","")
                 json_type = json_name.replace(".json","")
-                add_dict.add(json_type,json.loads(handle.read()))
+                add_dict.add(json_type,remove_duplicates(json.loads(handle.read())))
         except:
             pass
-   
+    
     return add_dict
 
 def login_user(request):
@@ -75,3 +75,10 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return render(request, 'login.html')
+
+def remove_duplicates(data_lists):
+    newlist = []
+    for data_list in data_lists:
+       if data_list not in newlist:
+           newlist.append(data_list)
+    return newlist

@@ -5,3 +5,4 @@ class addDict(dict):
 
     def add(self, key, value):
         self[key] = value
+    

@@ -13,8 +13,8 @@ def main(dirName):
     basicPath.JSONDirName = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.path.join("/ImageCheck",basicPath.ModelDir)+dirName
 
 
-    #guShare.guShareCheckMissingImage()
-    #rankingJSON.rankingJSONCheckMissingImage()
-    #styleJSON.styleJSONCheckMissingImage()
+    guShare.guShareCheckMissingImage()
+    rankingJSON.rankingJSONCheckMissingImage()
+    styleJSON.styleJSONCheckMissingImage()
     style_masterJSON.styleMasterJSONCheckMissingImage()
-    #productJSON.productJSONCheckMissingImage()
+    productJSON.productJSONCheckMissingImage()

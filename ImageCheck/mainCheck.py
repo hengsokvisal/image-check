@@ -15,4 +15,3 @@ def main(dirName):
     styleJSON.styleJSONCheckMissingImage()
     style_masterJSON.styleMasterJSONCheckMissingImage()
     productJSON.productJSONCheckMissingImage()
-    

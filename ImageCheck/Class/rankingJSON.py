@@ -35,7 +35,7 @@ def checkProductIDExist(productID,imageDir,imageName):
     else:
         checkProductImage(productID,imageDir,imageName)
         productIDFlag = 0
-    with open(os.path.join(basicPath.MissingDir, "rankingMissing.json"), mode='w+', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir+basicPath.modelName, "rankingMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(missingImageRankingJSON, f, sort_keys=True, indent=4)
 
 

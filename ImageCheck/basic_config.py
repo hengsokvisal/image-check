@@ -1,5 +1,7 @@
 import os
 class basicPath:
+    #Model name
+    modelName = ""
 
     #Dir Name
     JSONDirName = ""
@@ -33,8 +35,7 @@ class basicPath:
     ProductImage = "/products"
 
     # Missing Directory
-    MissingDir = os.path.join(os.getcwd(),"ImageCheck/MissingJSON")
-
+    MissingDir = os.path.join(os.getcwd(),"ImageCheck/MissingJSON/")
 
     # Model Dir
     ModelDir = "Model/"

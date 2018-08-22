@@ -32,6 +32,6 @@ def guShareCheckMissingImage():
             flag=0
 
     print("gumissing len",len(guShareMissingImage))
-    with open(os.path.join(basicPath.MissingDir , "gu-shareMissing.json"), mode='w+', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir+basicPath.modelName ,"gu-shareMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(guShareMissingImage, f, sort_keys=True, indent=4)
 

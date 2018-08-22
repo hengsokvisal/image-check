@@ -9,7 +9,7 @@ missingImageRankingJSON = []
 def checkProductImage(productID,imageDir,imageName):
     ProductFlag = 0
 
-    for productImage in os.listdir(os.path.join(basicPath.ProductImage,productID)+'/'+imageDir):
+    for productImage in os.listdir(basicPath.JSONDirName+basicPath.ProductImage+"/"+os.path.join(productID,imageDir)):
         if(imageName == productImage):
             ProductFlag = 1
     if(ProductFlag == 0):
@@ -24,7 +24,7 @@ def checkProductImage(productID,imageDir,imageName):
 def checkProductIDExist(productID,imageDir,imageName):
     productIDFlag = 0
 
-    for allProductid in os.listdir(basicPath.ProductImage):
+    for allProductid in os.listdir(basicPath.JSONDirName+basicPath.ProductImage):
         if(productID == allProductid):
             productIDFlag = 1
 
@@ -35,7 +35,7 @@ def checkProductIDExist(productID,imageDir,imageName):
     else:
         checkProductImage(productID,imageDir,imageName)
         productIDFlag = 0
-    with open(os.path.join(basicPath.MissingDir, "rankingMissing.json"), mode='w+', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir+basicPath.modelName, "rankingMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(missingImageRankingJSON, f, sort_keys=True, indent=4)
 
 
@@ -45,13 +45,11 @@ def getImageSource(json,gender):
     try:
         for img in json["gender"][gender]:
             imgPath = img["source"]["img_src"]
-
             #products/23233/images_jpg/232323.jpg
             product,productID,imageDir,imageName, = imgPath.split("/")
             checkProductIDExist(productID ,imageDir, imageName)
-
     except Exception as e:
-        print("error: Invalid input",e )
+        print("error: ",e)
 
 
 def rankingJSONCheckMissingImage():

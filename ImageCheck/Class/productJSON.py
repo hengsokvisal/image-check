@@ -3,23 +3,26 @@ import os
 from ImageCheck.basic_config import basicPath
 # pprint to organize print
 from pprint import pprint
+import time
+from pprint import pprint
 
 missingProductJSON = []
 
 
 # Find Missing Product Img & Img color in Product.json
 def findMissingProduct(data):
-
+    productFlag = 0
+    pprint(data)
     for img in data["products"]["colors"]:
-        productFlag = 0
         #check Product img
         products, productId, productDir, imageName = img["img"].split("/")
         try:
             for productImage in os.listdir(basicPath.JSONDirName+basicPath.ProductImage + "/" + productId + "/" + productDir):
-                if (img["img"] == productImage):
+                if (imageName == productImage):
                     productFlag = 1
+                    print(imageName)
             if (productFlag == 0):
-                print(img["img"])
+                print(imageName)
                 missingProductJSON.append(img["img"])
             else:
                 productFlag = 0
@@ -28,7 +31,7 @@ def findMissingProduct(data):
         #check Product Img Color
             products, productId, productDir, imageName = img["colorImg"].split("/")
             for productImage in os.listdir(basicPath.JSONDirName+basicPath.ProductImage + "/" + productId + "/" + productDir):
-                if (img["colorImg"] == productImage):
+                if (imageName == productImage):
                     productFlag = 1
             if (productFlag == 0):
                 print(img["colorImg"])
@@ -38,7 +41,7 @@ def findMissingProduct(data):
         except:
             pass
 
-    with open(os.path.join(basicPath.MissingDir, "productJSONMissing.json"), mode='w+', encoding='utf-8') as f:
+    with open(os.path.join(basicPath.MissingDir+basicPath.modelName, "productJSONMissing.json"), mode='w+', encoding='utf-8') as f:
         json.dump(missingProductJSON, f, sort_keys=True, indent=4)
 
 
@@ -52,15 +55,18 @@ def findMissingProduct(data):
 
 # Find Missing Styling In Product.json
 def findMissingStyling(data):
+
     StyleFlag = 0
     for img in data["products"]["stylings"]:
         if(img["image"].startswith("style_jpg/")):
             for styleImage in os.listdir(basicPath.JSONDirName+basicPath.StyleImage):
-                if (img["image"] == styleImage):
+                imgSrc = img["image"].replace("style_jpg/", "")
+
+                if (imgSrc == styleImage):
                     StyleFlag = 1
 
             if (StyleFlag == 0):
-                print(img["image"])
+                #print(img["image"])
                 missingProductJSON.append(img["image"])
             else:
                 StyleFlag = 0
@@ -68,11 +74,11 @@ def findMissingStyling(data):
             products , productId , productDir , imageName = img["image"].split("/")
             try:
                 for productImage in os.listdir(basicPath.JSONDirName+basicPath.ProductImage+"/"+productId+"/"+productDir):
-                    if (img["image"] == productImage):
+                    if (imageName == productImage):
                         StyleFlag = 1
 
                 if (StyleFlag == 0):
-                    print(img["image"])
+                    #print(img["image"])
                     missingProductJSON.append(img["image"])
                 else:
                     StyleFlag = 0

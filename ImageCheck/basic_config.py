@@ -41,5 +41,6 @@ class basicPath:
     # Missing Directory
     MissingDir = os.path.join(os.getcwd(),"ImageCheck/MissingJSON/")
 
+
     # Model Dir
     ModelDir = "Model/"

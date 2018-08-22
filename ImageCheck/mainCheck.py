@@ -18,7 +18,7 @@ def main(dirName):
     basicPath.JSONDirName = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.path.join("/ImageCheck",basicPath.ModelDir)+dirName
     basicPath.Dataname = dirName
 
-    print(basicPath.JSONDirName,"+++dic")
+    print("hello",basicPath.JSONDirName,"+++dic")
 
 
     guShare.guShareCheckMissingImage()

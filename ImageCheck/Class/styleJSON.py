@@ -31,11 +31,7 @@ def styleJSONCheckMissingImage():
             else:
                 flag=0
 
-<<<<<<< HEAD
         with open(os.path.join(basicPath.MissingDir+basicPath.modelName, "styleMissing.json"), mode='w+', encoding='utf-8') as f:
-=======
-        with open(os.path.join(basicPath.MissingDir,basicPath.Dataname)+ "/styleMissing.json", mode='w+', encoding='utf-8') as f:
->>>>>>> 6a4c83e46b6e4891cbac3f1b8bf986dc0c450675
             json.dump(missingImagestyleJSON, f, sort_keys=True, indent=4)
     except:
         pass

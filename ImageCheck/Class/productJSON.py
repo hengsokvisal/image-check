@@ -105,7 +105,7 @@ def productJSONCheckMissingImage():
                     #print(productJson)
                     with open(basicPath.JSONDirName+os.path.join(basicPath.ProductImage,allProductImage)+"/"+productJson) as f:
                         data = json.load(f)
-                        findMissingStyling(data)
+                        #findMissingStyling(data)
                         findMissingProduct(data)
         except NotADirectoryError as e:
             print("Error: ",e)

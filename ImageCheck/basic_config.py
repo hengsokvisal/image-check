@@ -28,7 +28,7 @@ class basicPath:
 
 
     # style image DIR NAME
-    StyleImage = "/style_jpg"
+    StyleImage = "/style"
 
 
     # product image DIR NAME

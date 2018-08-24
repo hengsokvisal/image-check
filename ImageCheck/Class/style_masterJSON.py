@@ -20,7 +20,7 @@ def checkMissingProductID(data):
                 if (productIDFlag == 0):
                     # Missing ProductID Dir & Image
                     print(proId["productId"]+"/"+proId["image"])
-                    styleMasterMissing.append(proId["productId"]+"/"+proId["image"])
+                    styleMasterMissing.append("Products/"+proId["productId"]+"/"+"images/"+proId["image"])
                 else:
                     productIDFlag = 0
 
@@ -40,7 +40,7 @@ def checkMissingStyleImage(data):
                     styleImageFlag = 1
             if(styleImageFlag == 0):
                 print("style_jpg/"+i["image"])
-                styleMasterMissing.append("style_jpg/"+i["image"])
+                styleMasterMissing.append("style/"+i["image"])
             else:
                 styleImageFlag = 0
 

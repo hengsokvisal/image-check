@@ -21,7 +21,7 @@ def styleJSONCheckMissingImage():
         for img in data["contents"]:
         #img["img_src"] = "style_jpg/filename.jpg"
         #remove "style_jpg"
-            imgSrc = img["source"]["img_src"].replace("style_jpg/","")
+            imgSrc = img["source"]["img_src"].replace("style/","")
             for file in os.listdir(basicPath.JSONDirName+basicPath.StyleImage):
                 if(imgSrc==file):
                     flag = 1

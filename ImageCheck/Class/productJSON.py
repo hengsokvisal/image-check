@@ -58,9 +58,9 @@ def findMissingStyling(data):
 
     StyleFlag = 0
     for img in data["products"]["stylings"]:
-        if(img["image"].startswith("style_jpg/")):
+        if(img["image"].startswith("style/")):
             for styleImage in os.listdir(basicPath.JSONDirName+basicPath.StyleImage):
-                imgSrc = img["image"].replace("style_jpg/", "")
+                imgSrc = img["image"].replace("style/", "")
 
                 if (imgSrc == styleImage):
                     StyleFlag = 1

@@ -19,7 +19,7 @@ def guShareCheckMissingImage():
     for img in data["contents"]:
         #img["img_src"] = "style_jpg/filename.jpg"
         #remove "style_jpg"
-        imgSrc = img["img_src"].replace("style_jpg/", "")
+        imgSrc = img["img_src"].replace("style/", "")
         
         for file in os.listdir(basicPath.JSONDirName+basicPath.StyleImage):
             if(imgSrc==file):
